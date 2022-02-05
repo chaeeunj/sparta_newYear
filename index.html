@@ -1,3 +1,4 @@
+<!--https://deokdam.spartacodingclub.kr/ghorRCDld7i8/index.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,122 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>덕담 하나 주면 안 잡아먹지!</title>
+
+  <!-- 공유할 때 미리보기 이미지나 설명이 나오도록 설정하는 og태그 -->
+  <meta property="og:title" content="채은 님의 덕담 페이지"/>
+  <meta property="og:description" content="덕담 한마디 남겨주세요!"/>
+  <meta property="og:image" content="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/ogimage.png"/>
+
   <style>
+    @font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/Cafe24Ssurround.woff') format('woff');
+    }
+
+    * {
+      font-family: 'Cafe24Ssurround';
+    }
 
     .background {
-      background-color: green;
-      width: 400px;
-      height: 800px;
+      width: 100vw;
+      height: 100vh;
+      /*100vw, 100vh를 사용하면 모바일 화면에서 창을 줄이거나 키워도
+         화면에 꽉 차게 할 수 있음
+         근데 또 너무 늘어나면 별로니까 max-width로 일정 픽셀이 되면 멈추도록 함*/
+      max-width: 450px;
+
+      /* 이 셋은 세트로 다님 */
+      background-image: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/bg_default.png');
+      background-position: center;
+      background-size: cover;
+
+      margin: auto; /* 양 옆의 마진을 똑같이 줘서 가운데로 가져오기 */
+    }
+
+    body, h1, p {
+      margin: 0; 
+      /* 자동으로 만들어진 여백을 지우고 원하는 대로 조작하기 */
+    }
+
+    .title {
+      color: #3f3732;
+
+       /* 늘 같이 다니는 4줄 */
+      display: flex; 
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding-top: 5vh; /* vh : 보는 사람의 세로 길이에 맞춰서 길이를 5/100로 지정함 */
+    }
+
+    .title > h1 {
+      font-size: 22px;
+
+      background-color: white;
+
+      padding: 8px 16px; /* 첫 px는 위아래, 두 번째 px는 좌우 */
+      border-radius: 16px;
+
+      margin-bottom: 16px;
+    }
+
+    .title > p {
+      font-size: 18px;
+    }
+
+    .title > p >span {
+      font-size: 22px;
     }
     
+    .btn {
+      background-color: #3f3732;
+      color: white;
+
+      width: 300px;
+      height: 50px;
+      border-radius: 10px;
+
+      font-size: 18px;
+
+      display: flex; 
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+
+      position: fixed; /* 화면이 어떻든 아이템 고정 */
+      bottom: 16px;
+      left: calc(50% - 150px); /* 전체 너비 300에서 절반을 땡겨와서 가운데에 위치하도록 계산 */
+    }
+
+    .box > img {
+      width: 70px;
+
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+    }
+
   </style>
+
+<script src="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/free_newyear_2022.js"></script> 
+<script> 
+  let mycode = 'd38a5395c675e288762f7dc5902da71e'; 
+</script>
 </head>
 <body>
   <div class="background">
-
+    <div class="title">
+      <h1>덕담 하나 주면 안잡아먹지!</h1>
+      <p>채은 님이 받은 덕담 : <span>2개</span></p>
+    </div>
+    
+    <div class="box">
+    </div>
+    
+    <div class="btn">바구니에 덕담 남기기</div>
   </div>
   
 </body>
